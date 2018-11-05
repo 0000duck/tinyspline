@@ -107,222 +107,222 @@ OPENED = _tinysplinepython.OPENED
 CLAMPED = _tinysplinepython.CLAMPED
 BEZIERS = _tinysplinepython.BEZIERS
 
-def ts_bspline_degree(spline):
+def ts_bspline_degree(spline: 'tsBSpline const *') -> "size_t":
     return _tinysplinepython.ts_bspline_degree(spline)
 ts_bspline_degree = _tinysplinepython.ts_bspline_degree
 
-def ts_bspline_set_degree(spline, deg):
+def ts_bspline_set_degree(spline: 'tsBSpline *', deg: 'size_t') -> "tsError":
     return _tinysplinepython.ts_bspline_set_degree(spline, deg)
 ts_bspline_set_degree = _tinysplinepython.ts_bspline_set_degree
 
-def ts_bspline_order(spline):
+def ts_bspline_order(spline: 'tsBSpline const *') -> "size_t":
     return _tinysplinepython.ts_bspline_order(spline)
 ts_bspline_order = _tinysplinepython.ts_bspline_order
 
-def ts_bspline_set_order(spline, order):
+def ts_bspline_set_order(spline: 'tsBSpline *', order: 'size_t') -> "tsError":
     return _tinysplinepython.ts_bspline_set_order(spline, order)
 ts_bspline_set_order = _tinysplinepython.ts_bspline_set_order
 
-def ts_bspline_dimension(spline):
+def ts_bspline_dimension(spline: 'tsBSpline const *') -> "size_t":
     return _tinysplinepython.ts_bspline_dimension(spline)
 ts_bspline_dimension = _tinysplinepython.ts_bspline_dimension
 
-def ts_bspline_set_dimension(spline, dim):
+def ts_bspline_set_dimension(spline: 'tsBSpline *', dim: 'size_t') -> "tsError":
     return _tinysplinepython.ts_bspline_set_dimension(spline, dim)
 ts_bspline_set_dimension = _tinysplinepython.ts_bspline_set_dimension
 
-def ts_bspline_len_control_points(spline):
+def ts_bspline_len_control_points(spline: 'tsBSpline const *') -> "size_t":
     return _tinysplinepython.ts_bspline_len_control_points(spline)
 ts_bspline_len_control_points = _tinysplinepython.ts_bspline_len_control_points
 
-def ts_bspline_num_control_points(spline):
+def ts_bspline_num_control_points(spline: 'tsBSpline const *') -> "size_t":
     return _tinysplinepython.ts_bspline_num_control_points(spline)
 ts_bspline_num_control_points = _tinysplinepython.ts_bspline_num_control_points
 
-def ts_bspline_sof_control_points(spline):
+def ts_bspline_sof_control_points(spline: 'tsBSpline const *') -> "size_t":
     return _tinysplinepython.ts_bspline_sof_control_points(spline)
 ts_bspline_sof_control_points = _tinysplinepython.ts_bspline_sof_control_points
 
-def ts_bspline_control_points(spline, ctrlp):
+def ts_bspline_control_points(spline: 'tsBSpline const *', ctrlp: 'tsReal **') -> "tsError":
     return _tinysplinepython.ts_bspline_control_points(spline, ctrlp)
 ts_bspline_control_points = _tinysplinepython.ts_bspline_control_points
 
-def ts_bspline_set_control_points(spline, ctrlp):
+def ts_bspline_set_control_points(spline: 'tsBSpline *', ctrlp: 'tsReal const *') -> "tsError":
     return _tinysplinepython.ts_bspline_set_control_points(spline, ctrlp)
 ts_bspline_set_control_points = _tinysplinepython.ts_bspline_set_control_points
 
-def ts_bspline_num_knots(spline):
+def ts_bspline_num_knots(spline: 'tsBSpline const *') -> "size_t":
     return _tinysplinepython.ts_bspline_num_knots(spline)
 ts_bspline_num_knots = _tinysplinepython.ts_bspline_num_knots
 
-def ts_bspline_sof_knots(spline):
+def ts_bspline_sof_knots(spline: 'tsBSpline const *') -> "size_t":
     return _tinysplinepython.ts_bspline_sof_knots(spline)
 ts_bspline_sof_knots = _tinysplinepython.ts_bspline_sof_knots
 
-def ts_bspline_knots(spline, knots):
+def ts_bspline_knots(spline: 'tsBSpline const *', knots: 'tsReal **') -> "tsError":
     return _tinysplinepython.ts_bspline_knots(spline, knots)
 ts_bspline_knots = _tinysplinepython.ts_bspline_knots
 
-def ts_bspline_set_knots(spline, knots):
+def ts_bspline_set_knots(spline: 'tsBSpline *', knots: 'tsReal const *') -> "tsError":
     return _tinysplinepython.ts_bspline_set_knots(spline, knots)
 ts_bspline_set_knots = _tinysplinepython.ts_bspline_set_knots
 
-def ts_deboornet_knot(net):
+def ts_deboornet_knot(net: 'tsDeBoorNet const *') -> "tsReal":
     return _tinysplinepython.ts_deboornet_knot(net)
 ts_deboornet_knot = _tinysplinepython.ts_deboornet_knot
 
-def ts_deboornet_index(net):
+def ts_deboornet_index(net: 'tsDeBoorNet const *') -> "size_t":
     return _tinysplinepython.ts_deboornet_index(net)
 ts_deboornet_index = _tinysplinepython.ts_deboornet_index
 
-def ts_deboornet_multiplicity(net):
+def ts_deboornet_multiplicity(net: 'tsDeBoorNet const *') -> "size_t":
     return _tinysplinepython.ts_deboornet_multiplicity(net)
 ts_deboornet_multiplicity = _tinysplinepython.ts_deboornet_multiplicity
 
-def ts_deboornet_num_insertions(net):
+def ts_deboornet_num_insertions(net: 'tsDeBoorNet const *') -> "size_t":
     return _tinysplinepython.ts_deboornet_num_insertions(net)
 ts_deboornet_num_insertions = _tinysplinepython.ts_deboornet_num_insertions
 
-def ts_deboornet_dimension(net):
+def ts_deboornet_dimension(net: 'tsDeBoorNet const *') -> "size_t":
     return _tinysplinepython.ts_deboornet_dimension(net)
 ts_deboornet_dimension = _tinysplinepython.ts_deboornet_dimension
 
-def ts_deboornet_len_points(net):
+def ts_deboornet_len_points(net: 'tsDeBoorNet const *') -> "size_t":
     return _tinysplinepython.ts_deboornet_len_points(net)
 ts_deboornet_len_points = _tinysplinepython.ts_deboornet_len_points
 
-def ts_deboornet_num_points(net):
+def ts_deboornet_num_points(net: 'tsDeBoorNet const *') -> "size_t":
     return _tinysplinepython.ts_deboornet_num_points(net)
 ts_deboornet_num_points = _tinysplinepython.ts_deboornet_num_points
 
-def ts_deboornet_sof_points(net):
+def ts_deboornet_sof_points(net: 'tsDeBoorNet const *') -> "size_t":
     return _tinysplinepython.ts_deboornet_sof_points(net)
 ts_deboornet_sof_points = _tinysplinepython.ts_deboornet_sof_points
 
-def ts_deboornet_points(net, points):
+def ts_deboornet_points(net: 'tsDeBoorNet const *', points: 'tsReal **') -> "tsError":
     return _tinysplinepython.ts_deboornet_points(net, points)
 ts_deboornet_points = _tinysplinepython.ts_deboornet_points
 
-def ts_deboornet_len_result(net):
+def ts_deboornet_len_result(net: 'tsDeBoorNet const *') -> "size_t":
     return _tinysplinepython.ts_deboornet_len_result(net)
 ts_deboornet_len_result = _tinysplinepython.ts_deboornet_len_result
 
-def ts_deboornet_num_result(net):
+def ts_deboornet_num_result(net: 'tsDeBoorNet const *') -> "size_t":
     return _tinysplinepython.ts_deboornet_num_result(net)
 ts_deboornet_num_result = _tinysplinepython.ts_deboornet_num_result
 
-def ts_deboornet_sof_result(net):
+def ts_deboornet_sof_result(net: 'tsDeBoorNet const *') -> "size_t":
     return _tinysplinepython.ts_deboornet_sof_result(net)
 ts_deboornet_sof_result = _tinysplinepython.ts_deboornet_sof_result
 
-def ts_deboornet_result(net, result):
+def ts_deboornet_result(net: 'tsDeBoorNet const *', result: 'tsReal **') -> "tsError":
     return _tinysplinepython.ts_deboornet_result(net, result)
 ts_deboornet_result = _tinysplinepython.ts_deboornet_result
 
-def ts_bspline_new(num_control_points, dimension, degree, type, _spline_):
+def ts_bspline_new(num_control_points: 'size_t', dimension: 'size_t', degree: 'size_t', type: 'tsBSplineType', _spline_: 'tsBSpline *') -> "tsError":
     return _tinysplinepython.ts_bspline_new(num_control_points, dimension, degree, type, _spline_)
 ts_bspline_new = _tinysplinepython.ts_bspline_new
 
-def ts_bspline_copy(original, _copy_):
+def ts_bspline_copy(original: 'tsBSpline const *', _copy_: 'tsBSpline *') -> "tsError":
     return _tinysplinepython.ts_bspline_copy(original, _copy_)
 ts_bspline_copy = _tinysplinepython.ts_bspline_copy
 
-def ts_bspline_move(arg1, _to_):
+def ts_bspline_move(arg1: 'tsBSpline *', _to_: 'tsBSpline *') -> "void":
     return _tinysplinepython.ts_bspline_move(arg1, _to_)
 ts_bspline_move = _tinysplinepython.ts_bspline_move
 
-def ts_bspline_free(_spline_):
+def ts_bspline_free(_spline_: 'tsBSpline *') -> "void":
     return _tinysplinepython.ts_bspline_free(_spline_)
 ts_bspline_free = _tinysplinepython.ts_bspline_free
 
-def ts_deboornet_copy(original, _copy_):
+def ts_deboornet_copy(original: 'tsDeBoorNet const *', _copy_: 'tsDeBoorNet *') -> "tsError":
     return _tinysplinepython.ts_deboornet_copy(original, _copy_)
 ts_deboornet_copy = _tinysplinepython.ts_deboornet_copy
 
-def ts_deboornet_move(arg1, _to_):
+def ts_deboornet_move(arg1: 'tsDeBoorNet *', _to_: 'tsDeBoorNet *') -> "void":
     return _tinysplinepython.ts_deboornet_move(arg1, _to_)
 ts_deboornet_move = _tinysplinepython.ts_deboornet_move
 
-def ts_deboornet_free(_net_):
+def ts_deboornet_free(_net_: 'tsDeBoorNet *') -> "void":
     return _tinysplinepython.ts_deboornet_free(_net_)
 ts_deboornet_free = _tinysplinepython.ts_deboornet_free
 
-def ts_bspline_interpolate_cubic(points, n, dim, _spline_):
+def ts_bspline_interpolate_cubic(points: 'tsReal const *', n: 'size_t', dim: 'size_t', _spline_: 'tsBSpline *') -> "tsError":
     return _tinysplinepython.ts_bspline_interpolate_cubic(points, n, dim, _spline_)
 ts_bspline_interpolate_cubic = _tinysplinepython.ts_bspline_interpolate_cubic
 
-def ts_bspline_eval(spline, u, _deBoorNet_):
+def ts_bspline_eval(spline: 'tsBSpline const *', u: 'tsReal', _deBoorNet_: 'tsDeBoorNet *') -> "tsError":
     return _tinysplinepython.ts_bspline_eval(spline, u, _deBoorNet_)
 ts_bspline_eval = _tinysplinepython.ts_bspline_eval
 
-def ts_bspline_derive(spline, n, _derivative_):
+def ts_bspline_derive(spline: 'tsBSpline const *', n: 'size_t', _derivative_: 'tsBSpline *') -> "tsError":
     return _tinysplinepython.ts_bspline_derive(spline, n, _derivative_)
 ts_bspline_derive = _tinysplinepython.ts_bspline_derive
 
-def ts_bspline_fill_knots(spline, type, min, max, _result_):
+def ts_bspline_fill_knots(spline: 'tsBSpline const *', type: 'tsBSplineType', min: 'tsReal', max: 'tsReal', _result_: 'tsBSpline *') -> "tsError":
     return _tinysplinepython.ts_bspline_fill_knots(spline, type, min, max, _result_)
 ts_bspline_fill_knots = _tinysplinepython.ts_bspline_fill_knots
 
-def ts_bspline_insert_knot(spline, u, n, _result_, _k_):
+def ts_bspline_insert_knot(spline: 'tsBSpline const *', u: 'tsReal', n: 'size_t', _result_: 'tsBSpline *', _k_: 'size_t *') -> "tsError":
     return _tinysplinepython.ts_bspline_insert_knot(spline, u, n, _result_, _k_)
 ts_bspline_insert_knot = _tinysplinepython.ts_bspline_insert_knot
 
-def ts_bspline_resize(spline, num_control_points, back, _resized_):
+def ts_bspline_resize(spline: 'tsBSpline const *', num_control_points: 'int', back: 'int', _resized_: 'tsBSpline *') -> "tsError":
     return _tinysplinepython.ts_bspline_resize(spline, num_control_points, back, _resized_)
 ts_bspline_resize = _tinysplinepython.ts_bspline_resize
 
-def ts_bspline_split(spline, u, _split_, _k_):
+def ts_bspline_split(spline: 'tsBSpline const *', u: 'tsReal', _split_: 'tsBSpline *', _k_: 'size_t *') -> "tsError":
     return _tinysplinepython.ts_bspline_split(spline, u, _split_, _k_)
 ts_bspline_split = _tinysplinepython.ts_bspline_split
 
-def ts_bspline_buckle(spline, b, _buckled_):
+def ts_bspline_buckle(spline: 'tsBSpline const *', b: 'tsReal', _buckled_: 'tsBSpline *') -> "tsError":
     return _tinysplinepython.ts_bspline_buckle(spline, b, _buckled_)
 ts_bspline_buckle = _tinysplinepython.ts_bspline_buckle
 
-def ts_bspline_to_beziers(spline, _beziers_):
+def ts_bspline_to_beziers(spline: 'tsBSpline const *', _beziers_: 'tsBSpline *') -> "tsError":
     return _tinysplinepython.ts_bspline_to_beziers(spline, _beziers_)
 ts_bspline_to_beziers = _tinysplinepython.ts_bspline_to_beziers
 
-def ts_bspline_to_json(spline, _json_):
+def ts_bspline_to_json(spline: 'tsBSpline const *', _json_: 'char **') -> "tsError":
     return _tinysplinepython.ts_bspline_to_json(spline, _json_)
 ts_bspline_to_json = _tinysplinepython.ts_bspline_to_json
 
-def ts_bspline_from_json(json, _spline_):
+def ts_bspline_from_json(json: 'char const *', _spline_: 'tsBSpline *') -> "tsError":
     return _tinysplinepython.ts_bspline_from_json(json, _spline_)
 ts_bspline_from_json = _tinysplinepython.ts_bspline_from_json
 
-def ts_bspline_save_json(spline, path):
+def ts_bspline_save_json(spline: 'tsBSpline const *', path: 'char const *') -> "tsError":
     return _tinysplinepython.ts_bspline_save_json(spline, path)
 ts_bspline_save_json = _tinysplinepython.ts_bspline_save_json
 
-def ts_bspline_load_json(path, _spline_):
+def ts_bspline_load_json(path: 'char const *', _spline_: 'tsBSpline *') -> "tsError":
     return _tinysplinepython.ts_bspline_load_json(path, _spline_)
 ts_bspline_load_json = _tinysplinepython.ts_bspline_load_json
 
-def ts_fequals(x, y):
+def ts_fequals(x: 'tsReal', y: 'tsReal') -> "int":
     return _tinysplinepython.ts_fequals(x, y)
 ts_fequals = _tinysplinepython.ts_fequals
 
-def ts_enum_str(err):
+def ts_enum_str(err: 'tsError') -> "char const *":
     return _tinysplinepython.ts_enum_str(err)
 ts_enum_str = _tinysplinepython.ts_enum_str
 
-def ts_str_enum(str):
+def ts_str_enum(str: 'char const *') -> "tsError":
     return _tinysplinepython.ts_str_enum(str)
 ts_str_enum = _tinysplinepython.ts_str_enum
 
-def ts_arr_fill(arr, num, val):
+def ts_arr_fill(arr: 'tsReal *', num: 'size_t', val: 'tsReal') -> "void":
     return _tinysplinepython.ts_arr_fill(arr, num, val)
 ts_arr_fill = _tinysplinepython.ts_arr_fill
 
-def ts_ctrlp_dist2(x, y, dim):
+def ts_ctrlp_dist2(x: 'tsReal const *', y: 'tsReal const *', dim: 'size_t') -> "tsReal":
     return _tinysplinepython.ts_ctrlp_dist2(x, y, dim)
 ts_ctrlp_dist2 = _tinysplinepython.ts_ctrlp_dist2
 class DeBoorNet(object):
     thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
     __repr__ = _swig_repr
 
-    def __init__(self, other):
+    def __init__(self, other: 'DeBoorNet'):
         _tinysplinepython.DeBoorNet_swiginit(self, _tinysplinepython.new_DeBoorNet(other))
     __swig_destroy__ = _tinysplinepython.delete_DeBoorNet
     knot = _swig_property(_tinysplinepython.DeBoorNet_knot_get)
@@ -377,19 +377,19 @@ class Utils(object):
 Utils_swigregister = _tinysplinepython.Utils_swigregister
 Utils_swigregister(Utils)
 
-def Utils_interpolateCubic(points, dim):
+def Utils_interpolateCubic(points: 'std::vector< tinyspline::real,std::allocator< tinyspline::real > > const *', dim: 'size_t') -> "tinyspline::BSpline":
     return _tinysplinepython.Utils_interpolateCubic(points, dim)
 Utils_interpolateCubic = _tinysplinepython.Utils_interpolateCubic
 
-def Utils_fequals(x, y):
+def Utils_fequals(x: 'tinyspline::real', y: 'tinyspline::real') -> "bool":
     return _tinysplinepython.Utils_fequals(x, y)
 Utils_fequals = _tinysplinepython.Utils_fequals
 
-def Utils_enum_str(err):
+def Utils_enum_str(err: 'tsError') -> "std::string":
     return _tinysplinepython.Utils_enum_str(err)
 Utils_enum_str = _tinysplinepython.Utils_enum_str
 
-def Utils_str_enum(str):
+def Utils_str_enum(str: 'std::string') -> "tsError":
     return _tinysplinepython.Utils_str_enum(str)
 Utils_str_enum = _tinysplinepython.Utils_str_enum
 
