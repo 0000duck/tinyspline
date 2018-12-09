@@ -355,6 +355,29 @@ attr(`ts_bspline_control_points`, 'returnType') = 'character'
 attr(`ts_bspline_control_points`, "inputTypes") = c('_p_tsBSpline', '_p_p_double')
 class(`ts_bspline_control_points`) = c("SWIGFunction", class('ts_bspline_control_points'))
 
+# Start of ts_bspline_control_point_at
+
+`ts_bspline_control_point_at` = function(spline, index, ctrlp, .copy = FALSE)
+{
+  if (inherits(spline, "ExternalReference")) spline = slot(spline,"ref") 
+  index = as.integer(index);
+  
+  if(length(index) > 1) {
+    warning("using only the first element of index");
+  };
+  
+  if (inherits(ctrlp, "ExternalReference")) ctrlp = slot(ctrlp,"ref") 
+  ;ans = .Call('R_swig_ts_bspline_control_point_at', spline, index, ctrlp, as.logical(.copy), PACKAGE='tinyspliner');
+  ans = enumFromInteger(ans, "_tsError");
+  
+  ans
+  
+}
+
+attr(`ts_bspline_control_point_at`, 'returnType') = 'character'
+attr(`ts_bspline_control_point_at`, "inputTypes") = c('_p_tsBSpline', 'integer', '_p_p_double')
+class(`ts_bspline_control_point_at`) = c("SWIGFunction", class('ts_bspline_control_point_at'))
+
 # Start of ts_bspline_set_control_points
 
 `ts_bspline_set_control_points` = function(spline, ctrlp, .copy = FALSE)
@@ -1458,6 +1481,25 @@ attr(`BSpline_Functor`, 'returnType') = '_p_tinyspline__DeBoorNet'
 attr(`BSpline_Functor`, "inputTypes") = c('_p_tinyspline__BSpline', 'numeric')
 class(`BSpline_Functor`) = c("SWIGFunction", class('BSpline_Functor'))
 
+# Start of BSpline_controlPointAt
+
+`BSpline_controlPointAt` = function(self, index)
+{
+  if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
+  index = as.integer(index);
+  
+  if(length(index) > 1) {
+    warning("using only the first element of index");
+  };
+  
+  ;.Call('R_swig_BSpline_controlPointAt', self, index, PACKAGE='tinyspliner');
+  
+}
+
+attr(`BSpline_controlPointAt`, 'returnType') = '_p_std__vectorT_double_std__allocatorT_double_t_t'
+attr(`BSpline_controlPointAt`, "inputTypes") = c('_p_tinyspline__BSpline', 'integer')
+class(`BSpline_controlPointAt`) = c("SWIGFunction", class('BSpline_controlPointAt'))
+
 # Start of BSpline_eval
 
 `BSpline_eval` = function(self, u, .copy = FALSE)
@@ -1836,7 +1878,7 @@ class(`BSpline_knots_get`) = c("SWIGFunction", class('BSpline_knots_get'))
 setMethod('$', '_p_tinyspline__BSpline', function(x, name)
 
 {
-  accessorFuns = list('Functor' = BSpline_Functor, 'eval' = BSpline_eval, 'domainMin' = BSpline_domainMin, 'domainMax' = BSpline_domainMax, 'toJSON' = BSpline_toJSON, 'fromJSON' = BSpline_fromJSON, 'save' = BSpline_save, 'load' = BSpline_load, 'fillKnots' = BSpline_fillKnots, 'insertKnot' = BSpline_insertKnot, 'resize' = BSpline_resize, 'split' = BSpline_split, 'buckle' = BSpline_buckle, 'toBeziers' = BSpline_toBeziers, 'derive' = BSpline_derive, 'degree' = BSpline_degree_get, 'order' = BSpline_order_get, 'dimension' = BSpline_dimension_get, 'controlPoints' = BSpline_controlPoints_get, 'knots' = BSpline_knots_get);
+  accessorFuns = list('Functor' = BSpline_Functor, 'controlPointAt' = BSpline_controlPointAt, 'eval' = BSpline_eval, 'domainMin' = BSpline_domainMin, 'domainMax' = BSpline_domainMax, 'toJSON' = BSpline_toJSON, 'fromJSON' = BSpline_fromJSON, 'save' = BSpline_save, 'load' = BSpline_load, 'fillKnots' = BSpline_fillKnots, 'insertKnot' = BSpline_insertKnot, 'resize' = BSpline_resize, 'split' = BSpline_split, 'buckle' = BSpline_buckle, 'toBeziers' = BSpline_toBeziers, 'derive' = BSpline_derive, 'degree' = BSpline_degree_get, 'order' = BSpline_order_get, 'dimension' = BSpline_dimension_get, 'controlPoints' = BSpline_controlPoints_get, 'knots' = BSpline_knots_get);
   vaccessors = c('degree', 'order', 'dimension', 'controlPoints', 'knots');
   ;        idx = pmatch(name, names(accessorFuns));
   if(is.na(idx)) 
