@@ -147,6 +147,10 @@ def ts_bspline_control_points(spline: 'tsBSpline const *', ctrlp: 'tsReal **') -
     return _tinysplinepython.ts_bspline_control_points(spline, ctrlp)
 ts_bspline_control_points = _tinysplinepython.ts_bspline_control_points
 
+def ts_bspline_control_point_at(spline: 'tsBSpline const *', index: 'size_t', ctrlp: 'tsReal **') -> "tsError":
+    return _tinysplinepython.ts_bspline_control_point_at(spline, index, ctrlp)
+ts_bspline_control_point_at = _tinysplinepython.ts_bspline_control_point_at
+
 def ts_bspline_set_control_points(spline: 'tsBSpline *', ctrlp: 'tsReal const *') -> "tsError":
     return _tinysplinepython.ts_bspline_set_control_points(spline, ctrlp)
 ts_bspline_set_control_points = _tinysplinepython.ts_bspline_set_control_points
@@ -356,6 +360,7 @@ class BSpline(object):
     controlPoints = _swig_property(_tinysplinepython.BSpline_controlPoints_get, _tinysplinepython.BSpline_controlPoints_set)
     knots = _swig_property(_tinysplinepython.BSpline_knots_get, _tinysplinepython.BSpline_knots_set)
 BSpline.__call__ = new_instancemethod(_tinysplinepython.BSpline___call__, None, BSpline)
+BSpline.controlPointAt = new_instancemethod(_tinysplinepython.BSpline_controlPointAt, None, BSpline)
 BSpline.eval = new_instancemethod(_tinysplinepython.BSpline_eval, None, BSpline)
 BSpline.domainMin = new_instancemethod(_tinysplinepython.BSpline_domainMin, None, BSpline)
 BSpline.domainMax = new_instancemethod(_tinysplinepython.BSpline_domainMax, None, BSpline)
