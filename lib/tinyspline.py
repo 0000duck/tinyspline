@@ -267,6 +267,10 @@ def ts_bspline_domain_max(spline: 'tsBSpline const *') -> "tsReal":
     return _tinysplinepython.ts_bspline_domain_max(spline)
 ts_bspline_domain_max = _tinysplinepython.ts_bspline_domain_max
 
+def ts_bspline_is_closed(spline: 'tsBSpline const *', epsilon: 'tsReal') -> "int":
+    return _tinysplinepython.ts_bspline_is_closed(spline, epsilon)
+ts_bspline_is_closed = _tinysplinepython.ts_bspline_is_closed
+
 def ts_bspline_derive(spline: 'tsBSpline const *', n: 'size_t', _derivative_: 'tsBSpline *') -> "tsError":
     return _tinysplinepython.ts_bspline_derive(spline, n, _derivative_)
 ts_bspline_derive = _tinysplinepython.ts_bspline_derive
@@ -364,6 +368,7 @@ BSpline.controlPointAt = new_instancemethod(_tinysplinepython.BSpline_controlPoi
 BSpline.eval = new_instancemethod(_tinysplinepython.BSpline_eval, None, BSpline)
 BSpline.domainMin = new_instancemethod(_tinysplinepython.BSpline_domainMin, None, BSpline)
 BSpline.domainMax = new_instancemethod(_tinysplinepython.BSpline_domainMax, None, BSpline)
+BSpline.isClosed = new_instancemethod(_tinysplinepython.BSpline_isClosed, None, BSpline)
 BSpline.toJSON = new_instancemethod(_tinysplinepython.BSpline_toJSON, None, BSpline)
 BSpline.fromJSON = new_instancemethod(_tinysplinepython.BSpline_fromJSON, None, BSpline)
 BSpline.save = new_instancemethod(_tinysplinepython.BSpline_save, None, BSpline)
