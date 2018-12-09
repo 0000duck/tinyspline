@@ -278,6 +278,12 @@ double ts_bspline_domain_max(SWIGTYPE_p_tsBSpline spline) {
   return ret;
 }
 
+int ts_bspline_is_closed(SWIGTYPE_p_tsBSpline spline, double epsilon) {
+  auto ret = tinyspline_im.ts_bspline_is_closed(SWIGTYPE_p_tsBSpline.swigGetCPtr(spline), epsilon);
+  if (tinyspline_im.SwigPendingException.isPending) throw tinyspline_im.SwigPendingException.retrieve();
+  return ret;
+}
+
 int ts_bspline_derive(SWIGTYPE_p_tsBSpline spline, size_t n, SWIGTYPE_p_tsBSpline _derivative_) {
   int ret = cast(int)tinyspline_im.ts_bspline_derive(SWIGTYPE_p_tsBSpline.swigGetCPtr(spline), n, SWIGTYPE_p_tsBSpline.swigGetCPtr(_derivative_));
   if (tinyspline_im.SwigPendingException.isPending) throw tinyspline_im.SwigPendingException.retrieve();
@@ -570,6 +576,18 @@ class BSpline {
 
   public double domainMax() const {
     auto ret = tinyspline_im.BSpline_domainMax(cast(void*)swigCPtr);
+    if (tinyspline_im.SwigPendingException.isPending) throw tinyspline_im.SwigPendingException.retrieve();
+    return ret;
+  }
+
+  public bool isClosed(double epsilon) const {
+    bool ret = tinyspline_im.BSpline_isClosed__SWIG_0(cast(void*)swigCPtr, epsilon) ? true : false;
+    if (tinyspline_im.SwigPendingException.isPending) throw tinyspline_im.SwigPendingException.retrieve();
+    return ret;
+  }
+
+  public bool isClosed() const {
+    bool ret = tinyspline_im.BSpline_isClosed__SWIG_1(cast(void*)swigCPtr) ? true : false;
     if (tinyspline_im.SwigPendingException.isPending) throw tinyspline_im.SwigPendingException.retrieve();
     return ret;
   }

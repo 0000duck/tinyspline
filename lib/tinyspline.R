@@ -815,6 +815,20 @@ attr(`ts_bspline_domain_max`, 'returnType') = 'numeric'
 attr(`ts_bspline_domain_max`, "inputTypes") = c('_p_tsBSpline')
 class(`ts_bspline_domain_max`) = c("SWIGFunction", class('ts_bspline_domain_max'))
 
+# Start of ts_bspline_is_closed
+
+`ts_bspline_is_closed` = function(spline, epsilon, .copy = FALSE)
+{
+  if (inherits(spline, "ExternalReference")) spline = slot(spline,"ref") 
+  
+  ;.Call('R_swig_ts_bspline_is_closed', spline, epsilon, as.logical(.copy), PACKAGE='tinyspliner');
+  
+}
+
+attr(`ts_bspline_is_closed`, 'returnType') = 'integer'
+attr(`ts_bspline_is_closed`, "inputTypes") = c('_p_tsBSpline', 'numeric')
+class(`ts_bspline_is_closed`) = c("SWIGFunction", class('ts_bspline_is_closed'))
+
 # Start of ts_bspline_derive
 
 `ts_bspline_derive` = function(spline, n, s_derivative_, .copy = FALSE)
@@ -1543,6 +1557,53 @@ attr(`BSpline_domainMax`, 'returnType') = 'numeric'
 attr(`BSpline_domainMax`, "inputTypes") = c('_p_tinyspline__BSpline')
 class(`BSpline_domainMax`) = c("SWIGFunction", class('BSpline_domainMax'))
 
+# Start of BSpline_isClosed
+
+`BSpline_isClosed__SWIG_0` = function(self, epsilon, .copy = FALSE)
+{
+  if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
+  
+  ;.Call('R_swig_BSpline_isClosed__SWIG_0', self, epsilon, as.logical(.copy), PACKAGE='tinyspliner');
+  
+}
+
+attr(`BSpline_isClosed__SWIG_0`, 'returnType') = 'logical'
+attr(`BSpline_isClosed__SWIG_0`, "inputTypes") = c('_p_tinyspline__BSpline', 'numeric')
+class(`BSpline_isClosed__SWIG_0`) = c("SWIGFunction", class('BSpline_isClosed__SWIG_0'))
+
+# Start of BSpline_isClosed
+
+`BSpline_isClosed__SWIG_1` = function(self, .copy = FALSE)
+{
+  if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
+  ;.Call('R_swig_BSpline_isClosed__SWIG_1', self, as.logical(.copy), PACKAGE='tinyspliner');
+  
+}
+
+attr(`BSpline_isClosed__SWIG_1`, 'returnType') = 'logical'
+attr(`BSpline_isClosed__SWIG_1`, "inputTypes") = c('_p_tinyspline__BSpline')
+class(`BSpline_isClosed__SWIG_1`) = c("SWIGFunction", class('BSpline_isClosed__SWIG_1'))
+
+`BSpline_isClosed` <- function(...) {
+  argtypes <- mapply(class, list(...));
+  argv <- list(...);
+  argc <- length(argtypes);
+# dispatch functions 2
+  if (argc == 1) {
+    if (extends(argtypes[1], '_p_tinyspline__BSpline')) {
+      f <- BSpline_isClosed__SWIG_1; 
+    }
+  } else if (argc == 2) {
+    if (extends(argtypes[1], '_p_tinyspline__BSpline') && ( is.numeric(argv[[2]]) && length(argv[[2]]) == 1 )) {
+      f <- BSpline_isClosed__SWIG_0; 
+    }
+  } else {
+    stop("cannot find overloaded function for BSpline_isClosed with argtypes (",toString(argtypes),")");
+  };
+  f(...);
+}
+
+# Dispatch function
 # Start of BSpline_toJSON
 
 `BSpline_toJSON` = function(self, .copy = FALSE)
@@ -1878,7 +1939,7 @@ class(`BSpline_knots_get`) = c("SWIGFunction", class('BSpline_knots_get'))
 setMethod('$', '_p_tinyspline__BSpline', function(x, name)
 
 {
-  accessorFuns = list('Functor' = BSpline_Functor, 'controlPointAt' = BSpline_controlPointAt, 'eval' = BSpline_eval, 'domainMin' = BSpline_domainMin, 'domainMax' = BSpline_domainMax, 'toJSON' = BSpline_toJSON, 'fromJSON' = BSpline_fromJSON, 'save' = BSpline_save, 'load' = BSpline_load, 'fillKnots' = BSpline_fillKnots, 'insertKnot' = BSpline_insertKnot, 'resize' = BSpline_resize, 'split' = BSpline_split, 'buckle' = BSpline_buckle, 'toBeziers' = BSpline_toBeziers, 'derive' = BSpline_derive, 'degree' = BSpline_degree_get, 'order' = BSpline_order_get, 'dimension' = BSpline_dimension_get, 'controlPoints' = BSpline_controlPoints_get, 'knots' = BSpline_knots_get);
+  accessorFuns = list('Functor' = BSpline_Functor, 'controlPointAt' = BSpline_controlPointAt, 'eval' = BSpline_eval, 'domainMin' = BSpline_domainMin, 'domainMax' = BSpline_domainMax, 'isClosed' = BSpline_isClosed, 'toJSON' = BSpline_toJSON, 'fromJSON' = BSpline_fromJSON, 'save' = BSpline_save, 'load' = BSpline_load, 'fillKnots' = BSpline_fillKnots, 'insertKnot' = BSpline_insertKnot, 'resize' = BSpline_resize, 'split' = BSpline_split, 'buckle' = BSpline_buckle, 'toBeziers' = BSpline_toBeziers, 'derive' = BSpline_derive, 'degree' = BSpline_degree_get, 'order' = BSpline_order_get, 'dimension' = BSpline_dimension_get, 'controlPoints' = BSpline_controlPoints_get, 'knots' = BSpline_knots_get);
   vaccessors = c('degree', 'order', 'dimension', 'controlPoints', 'knots');
   ;        idx = pmatch(name, names(accessorFuns));
   if(is.na(idx)) 

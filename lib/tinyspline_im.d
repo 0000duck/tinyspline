@@ -336,6 +336,7 @@ static this() {
   mixin(bindCode("ts_bspline_eval", "D_ts_bspline_eval"));
   mixin(bindCode("ts_bspline_domain_min", "D_ts_bspline_domain_min"));
   mixin(bindCode("ts_bspline_domain_max", "D_ts_bspline_domain_max"));
+  mixin(bindCode("ts_bspline_is_closed", "D_ts_bspline_is_closed"));
   mixin(bindCode("ts_bspline_derive", "D_ts_bspline_derive"));
   mixin(bindCode("ts_bspline_fill_knots", "D_ts_bspline_fill_knots"));
   mixin(bindCode("ts_bspline_insert_knot", "D_ts_bspline_insert_knot"));
@@ -378,6 +379,8 @@ static this() {
   mixin(bindCode("BSpline_eval", "D_BSpline_eval"));
   mixin(bindCode("BSpline_domainMin", "D_BSpline_domainMin"));
   mixin(bindCode("BSpline_domainMax", "D_BSpline_domainMax"));
+  mixin(bindCode("BSpline_isClosed__SWIG_0", "D_BSpline_isClosed__SWIG_0"));
+  mixin(bindCode("BSpline_isClosed__SWIG_1", "D_BSpline_isClosed__SWIG_1"));
   mixin(bindCode("BSpline_toJSON", "D_BSpline_toJSON"));
   mixin(bindCode("BSpline_fromJSON", "D_BSpline_fromJSON"));
   mixin(bindCode("BSpline_save", "D_BSpline_save"));
@@ -608,6 +611,7 @@ SwigExternC!(int function(void* jarg1, size_t jarg2, size_t jarg3, void* jarg4))
 SwigExternC!(int function(void* jarg1, double jarg2, void* jarg3)) ts_bspline_eval;
 SwigExternC!(double function(void* jarg1)) ts_bspline_domain_min;
 SwigExternC!(double function(void* jarg1)) ts_bspline_domain_max;
+SwigExternC!(int function(void* jarg1, double jarg2)) ts_bspline_is_closed;
 SwigExternC!(int function(void* jarg1, size_t jarg2, void* jarg3)) ts_bspline_derive;
 SwigExternC!(int function(void* jarg1, int jarg2, double jarg3, double jarg4, void* jarg5)) ts_bspline_fill_knots;
 SwigExternC!(int function(void* jarg1, double jarg2, size_t jarg3, void* jarg4, void* jarg5)) ts_bspline_insert_knot;
@@ -650,6 +654,8 @@ SwigExternC!(void* function(void* jarg1)) BSpline_knots;
 SwigExternC!(void* function(void* jarg1, double jarg2)) BSpline_eval;
 SwigExternC!(double function(void* jarg1)) BSpline_domainMin;
 SwigExternC!(double function(void* jarg1)) BSpline_domainMax;
+SwigExternC!(uint function(void* jarg1, double jarg2)) BSpline_isClosed__SWIG_0;
+SwigExternC!(uint function(void* jarg1)) BSpline_isClosed__SWIG_1;
 SwigExternC!(const(char)* function(void* jarg1)) BSpline_toJSON;
 SwigExternC!(void function(void* jarg1, const(char)* jarg2)) BSpline_fromJSON;
 SwigExternC!(void function(void* jarg1, const(char)* jarg2)) BSpline_save;
