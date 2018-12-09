@@ -260,6 +260,18 @@ int ts_bspline_eval(SWIGTYPE_p_tsBSpline spline, double u, SWIGTYPE_p_tsDeBoorNe
   return ret;
 }
 
+double ts_bspline_domain_min(SWIGTYPE_p_tsBSpline spline) {
+  auto ret = tinyspline_im.ts_bspline_domain_min(SWIGTYPE_p_tsBSpline.swigGetCPtr(spline));
+  if (tinyspline_im.SwigPendingException.isPending) throw tinyspline_im.SwigPendingException.retrieve();
+  return ret;
+}
+
+double ts_bspline_domain_max(SWIGTYPE_p_tsBSpline spline) {
+  auto ret = tinyspline_im.ts_bspline_domain_max(SWIGTYPE_p_tsBSpline.swigGetCPtr(spline));
+  if (tinyspline_im.SwigPendingException.isPending) throw tinyspline_im.SwigPendingException.retrieve();
+  return ret;
+}
+
 int ts_bspline_derive(SWIGTYPE_p_tsBSpline spline, size_t n, SWIGTYPE_p_tsBSpline _derivative_) {
   int ret = cast(int)tinyspline_im.ts_bspline_derive(SWIGTYPE_p_tsBSpline.swigGetCPtr(spline), n, SWIGTYPE_p_tsBSpline.swigGetCPtr(_derivative_));
   if (tinyspline_im.SwigPendingException.isPending) throw tinyspline_im.SwigPendingException.retrieve();
@@ -533,6 +545,18 @@ class BSpline {
 
   public DeBoorNet eval(double u) const {
     DeBoorNet ret = new DeBoorNet(tinyspline_im.BSpline_eval(cast(void*)swigCPtr, u), true);
+    if (tinyspline_im.SwigPendingException.isPending) throw tinyspline_im.SwigPendingException.retrieve();
+    return ret;
+  }
+
+  public double domainMin() const {
+    auto ret = tinyspline_im.BSpline_domainMin(cast(void*)swigCPtr);
+    if (tinyspline_im.SwigPendingException.isPending) throw tinyspline_im.SwigPendingException.retrieve();
+    return ret;
+  }
+
+  public double domainMax() const {
+    auto ret = tinyspline_im.BSpline_domainMax(cast(void*)swigCPtr);
     if (tinyspline_im.SwigPendingException.isPending) throw tinyspline_im.SwigPendingException.retrieve();
     return ret;
   }

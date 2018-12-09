@@ -766,6 +766,32 @@ attr(`ts_bspline_eval`, 'returnType') = 'character'
 attr(`ts_bspline_eval`, "inputTypes") = c('_p_tsBSpline', 'numeric', '_p_tsDeBoorNet')
 class(`ts_bspline_eval`) = c("SWIGFunction", class('ts_bspline_eval'))
 
+# Start of ts_bspline_domain_min
+
+`ts_bspline_domain_min` = function(spline, .copy = FALSE)
+{
+  if (inherits(spline, "ExternalReference")) spline = slot(spline,"ref") 
+  ;.Call('R_swig_ts_bspline_domain_min', spline, as.logical(.copy), PACKAGE='tinyspliner');
+  
+}
+
+attr(`ts_bspline_domain_min`, 'returnType') = 'numeric'
+attr(`ts_bspline_domain_min`, "inputTypes") = c('_p_tsBSpline')
+class(`ts_bspline_domain_min`) = c("SWIGFunction", class('ts_bspline_domain_min'))
+
+# Start of ts_bspline_domain_max
+
+`ts_bspline_domain_max` = function(spline, .copy = FALSE)
+{
+  if (inherits(spline, "ExternalReference")) spline = slot(spline,"ref") 
+  ;.Call('R_swig_ts_bspline_domain_max', spline, as.logical(.copy), PACKAGE='tinyspliner');
+  
+}
+
+attr(`ts_bspline_domain_max`, 'returnType') = 'numeric'
+attr(`ts_bspline_domain_max`, "inputTypes") = c('_p_tsBSpline')
+class(`ts_bspline_domain_max`) = c("SWIGFunction", class('ts_bspline_domain_max'))
+
 # Start of ts_bspline_derive
 
 `ts_bspline_derive` = function(spline, n, s_derivative_, .copy = FALSE)
@@ -1449,6 +1475,32 @@ attr(`BSpline_eval`, 'returnType') = '_p_tinyspline__DeBoorNet'
 attr(`BSpline_eval`, "inputTypes") = c('_p_tinyspline__BSpline', 'numeric')
 class(`BSpline_eval`) = c("SWIGFunction", class('BSpline_eval'))
 
+# Start of BSpline_domainMin
+
+`BSpline_domainMin` = function(self, .copy = FALSE)
+{
+  if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
+  ;.Call('R_swig_BSpline_domainMin', self, as.logical(.copy), PACKAGE='tinyspliner');
+  
+}
+
+attr(`BSpline_domainMin`, 'returnType') = 'numeric'
+attr(`BSpline_domainMin`, "inputTypes") = c('_p_tinyspline__BSpline')
+class(`BSpline_domainMin`) = c("SWIGFunction", class('BSpline_domainMin'))
+
+# Start of BSpline_domainMax
+
+`BSpline_domainMax` = function(self, .copy = FALSE)
+{
+  if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
+  ;.Call('R_swig_BSpline_domainMax', self, as.logical(.copy), PACKAGE='tinyspliner');
+  
+}
+
+attr(`BSpline_domainMax`, 'returnType') = 'numeric'
+attr(`BSpline_domainMax`, "inputTypes") = c('_p_tinyspline__BSpline')
+class(`BSpline_domainMax`) = c("SWIGFunction", class('BSpline_domainMax'))
+
 # Start of BSpline_toJSON
 
 `BSpline_toJSON` = function(self, .copy = FALSE)
@@ -1784,7 +1836,7 @@ class(`BSpline_knots_get`) = c("SWIGFunction", class('BSpline_knots_get'))
 setMethod('$', '_p_tinyspline__BSpline', function(x, name)
 
 {
-  accessorFuns = list('Functor' = BSpline_Functor, 'eval' = BSpline_eval, 'toJSON' = BSpline_toJSON, 'fromJSON' = BSpline_fromJSON, 'save' = BSpline_save, 'load' = BSpline_load, 'fillKnots' = BSpline_fillKnots, 'insertKnot' = BSpline_insertKnot, 'resize' = BSpline_resize, 'split' = BSpline_split, 'buckle' = BSpline_buckle, 'toBeziers' = BSpline_toBeziers, 'derive' = BSpline_derive, 'degree' = BSpline_degree_get, 'order' = BSpline_order_get, 'dimension' = BSpline_dimension_get, 'controlPoints' = BSpline_controlPoints_get, 'knots' = BSpline_knots_get);
+  accessorFuns = list('Functor' = BSpline_Functor, 'eval' = BSpline_eval, 'domainMin' = BSpline_domainMin, 'domainMax' = BSpline_domainMax, 'toJSON' = BSpline_toJSON, 'fromJSON' = BSpline_fromJSON, 'save' = BSpline_save, 'load' = BSpline_load, 'fillKnots' = BSpline_fillKnots, 'insertKnot' = BSpline_insertKnot, 'resize' = BSpline_resize, 'split' = BSpline_split, 'buckle' = BSpline_buckle, 'toBeziers' = BSpline_toBeziers, 'derive' = BSpline_derive, 'degree' = BSpline_degree_get, 'order' = BSpline_order_get, 'dimension' = BSpline_dimension_get, 'controlPoints' = BSpline_controlPoints_get, 'knots' = BSpline_knots_get);
   vaccessors = c('degree', 'order', 'dimension', 'controlPoints', 'knots');
   ;        idx = pmatch(name, names(accessorFuns));
   if(is.na(idx)) 

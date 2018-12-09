@@ -255,6 +255,14 @@ def ts_bspline_eval(spline: 'tsBSpline const *', u: 'tsReal', _deBoorNet_: 'tsDe
     return _tinysplinepython.ts_bspline_eval(spline, u, _deBoorNet_)
 ts_bspline_eval = _tinysplinepython.ts_bspline_eval
 
+def ts_bspline_domain_min(spline: 'tsBSpline const *') -> "tsReal":
+    return _tinysplinepython.ts_bspline_domain_min(spline)
+ts_bspline_domain_min = _tinysplinepython.ts_bspline_domain_min
+
+def ts_bspline_domain_max(spline: 'tsBSpline const *') -> "tsReal":
+    return _tinysplinepython.ts_bspline_domain_max(spline)
+ts_bspline_domain_max = _tinysplinepython.ts_bspline_domain_max
+
 def ts_bspline_derive(spline: 'tsBSpline const *', n: 'size_t', _derivative_: 'tsBSpline *') -> "tsError":
     return _tinysplinepython.ts_bspline_derive(spline, n, _derivative_)
 ts_bspline_derive = _tinysplinepython.ts_bspline_derive
@@ -349,6 +357,8 @@ class BSpline(object):
     knots = _swig_property(_tinysplinepython.BSpline_knots_get, _tinysplinepython.BSpline_knots_set)
 BSpline.__call__ = new_instancemethod(_tinysplinepython.BSpline___call__, None, BSpline)
 BSpline.eval = new_instancemethod(_tinysplinepython.BSpline_eval, None, BSpline)
+BSpline.domainMin = new_instancemethod(_tinysplinepython.BSpline_domainMin, None, BSpline)
+BSpline.domainMax = new_instancemethod(_tinysplinepython.BSpline_domainMax, None, BSpline)
 BSpline.toJSON = new_instancemethod(_tinysplinepython.BSpline_toJSON, None, BSpline)
 BSpline.fromJSON = new_instancemethod(_tinysplinepython.BSpline_fromJSON, None, BSpline)
 BSpline.save = new_instancemethod(_tinysplinepython.BSpline_save, None, BSpline)
