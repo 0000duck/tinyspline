@@ -267,8 +267,8 @@ def ts_bspline_domain_max(spline: 'tsBSpline const *') -> "tsReal":
     return _tinysplinepython.ts_bspline_domain_max(spline)
 ts_bspline_domain_max = _tinysplinepython.ts_bspline_domain_max
 
-def ts_bspline_is_closed(spline: 'tsBSpline const *', epsilon: 'tsReal') -> "int":
-    return _tinysplinepython.ts_bspline_is_closed(spline, epsilon)
+def ts_bspline_is_closed(spline: 'tsBSpline const *', epsilon: 'tsReal', closed: 'int *') -> "tsError":
+    return _tinysplinepython.ts_bspline_is_closed(spline, epsilon, closed)
 ts_bspline_is_closed = _tinysplinepython.ts_bspline_is_closed
 
 def ts_bspline_derive(spline: 'tsBSpline const *', n: 'size_t', _derivative_: 'tsBSpline *') -> "tsError":

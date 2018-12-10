@@ -817,16 +817,20 @@ class(`ts_bspline_domain_max`) = c("SWIGFunction", class('ts_bspline_domain_max'
 
 # Start of ts_bspline_is_closed
 
-`ts_bspline_is_closed` = function(spline, epsilon, .copy = FALSE)
+`ts_bspline_is_closed` = function(spline, epsilon, closed, .copy = FALSE)
 {
   if (inherits(spline, "ExternalReference")) spline = slot(spline,"ref") 
   
-  ;.Call('R_swig_ts_bspline_is_closed', spline, epsilon, as.logical(.copy), PACKAGE='tinyspliner');
+  closed = as.integer(closed);
+  ;ans = .Call('R_swig_ts_bspline_is_closed', spline, epsilon, closed, as.logical(.copy), PACKAGE='tinyspliner');
+  ans = enumFromInteger(ans, "_tsError");
+  
+  ans
   
 }
 
-attr(`ts_bspline_is_closed`, 'returnType') = 'integer'
-attr(`ts_bspline_is_closed`, "inputTypes") = c('_p_tsBSpline', 'numeric')
+attr(`ts_bspline_is_closed`, 'returnType') = 'character'
+attr(`ts_bspline_is_closed`, "inputTypes") = c('_p_tsBSpline', 'numeric', 'integer')
 class(`ts_bspline_is_closed`) = c("SWIGFunction", class('ts_bspline_is_closed'))
 
 # Start of ts_bspline_derive

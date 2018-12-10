@@ -278,8 +278,8 @@ double ts_bspline_domain_max(SWIGTYPE_p_tsBSpline spline) {
   return ret;
 }
 
-int ts_bspline_is_closed(SWIGTYPE_p_tsBSpline spline, double epsilon) {
-  auto ret = tinyspline_im.ts_bspline_is_closed(SWIGTYPE_p_tsBSpline.swigGetCPtr(spline), epsilon);
+int ts_bspline_is_closed(SWIGTYPE_p_tsBSpline spline, double epsilon, int* closed) {
+  int ret = cast(int)tinyspline_im.ts_bspline_is_closed(SWIGTYPE_p_tsBSpline.swigGetCPtr(spline), epsilon, cast(void*)closed);
   if (tinyspline_im.SwigPendingException.isPending) throw tinyspline_im.SwigPendingException.retrieve();
   return ret;
 }

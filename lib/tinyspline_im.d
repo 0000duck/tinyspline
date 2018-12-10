@@ -611,7 +611,7 @@ SwigExternC!(int function(void* jarg1, size_t jarg2, size_t jarg3, void* jarg4))
 SwigExternC!(int function(void* jarg1, double jarg2, void* jarg3)) ts_bspline_eval;
 SwigExternC!(double function(void* jarg1)) ts_bspline_domain_min;
 SwigExternC!(double function(void* jarg1)) ts_bspline_domain_max;
-SwigExternC!(int function(void* jarg1, double jarg2)) ts_bspline_is_closed;
+SwigExternC!(int function(void* jarg1, double jarg2, void* jarg3)) ts_bspline_is_closed;
 SwigExternC!(int function(void* jarg1, size_t jarg2, void* jarg3)) ts_bspline_derive;
 SwigExternC!(int function(void* jarg1, int jarg2, double jarg3, double jarg4, void* jarg5)) ts_bspline_fill_knots;
 SwigExternC!(int function(void* jarg1, double jarg2, size_t jarg3, void* jarg4, void* jarg5)) ts_bspline_insert_knot;
