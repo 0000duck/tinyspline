@@ -348,7 +348,7 @@ class DeBoorNet(object):
     knot = _swig_property(_tinysplinepython.DeBoorNet_knot_get)
     index = _swig_property(_tinysplinepython.DeBoorNet_index_get)
     multiplicity = _swig_property(_tinysplinepython.DeBoorNet_multiplicity_get)
-    numInsertions = _swig_property(_tinysplinepython.DeBoorNet_numInsertions_get)
+    num_insertions = _swig_property(_tinysplinepython.DeBoorNet_num_insertions_get)
     dimension = _swig_property(_tinysplinepython.DeBoorNet_dimension_get)
     points = _swig_property(_tinysplinepython.DeBoorNet_points_get)
     result = _swig_property(_tinysplinepython.DeBoorNet_result_get)
@@ -365,25 +365,25 @@ class BSpline(object):
     degree = _swig_property(_tinysplinepython.BSpline_degree_get)
     order = _swig_property(_tinysplinepython.BSpline_order_get)
     dimension = _swig_property(_tinysplinepython.BSpline_dimension_get)
-    controlPoints = _swig_property(_tinysplinepython.BSpline_controlPoints_get, _tinysplinepython.BSpline_controlPoints_set)
+    control_points = _swig_property(_tinysplinepython.BSpline_control_points_get, _tinysplinepython.BSpline_control_points_set)
     knots = _swig_property(_tinysplinepython.BSpline_knots_get, _tinysplinepython.BSpline_knots_set)
 BSpline.__call__ = new_instancemethod(_tinysplinepython.BSpline___call__, None, BSpline)
-BSpline.controlPointAt = new_instancemethod(_tinysplinepython.BSpline_controlPointAt, None, BSpline)
+BSpline.control_point_at = new_instancemethod(_tinysplinepython.BSpline_control_point_at, None, BSpline)
 BSpline.eval = new_instancemethod(_tinysplinepython.BSpline_eval, None, BSpline)
-BSpline.domainMin = new_instancemethod(_tinysplinepython.BSpline_domainMin, None, BSpline)
-BSpline.domainMax = new_instancemethod(_tinysplinepython.BSpline_domainMax, None, BSpline)
-BSpline.isClosed = new_instancemethod(_tinysplinepython.BSpline_isClosed, None, BSpline)
-BSpline.toJSON = new_instancemethod(_tinysplinepython.BSpline_toJSON, None, BSpline)
-BSpline.fromJSON = new_instancemethod(_tinysplinepython.BSpline_fromJSON, None, BSpline)
+BSpline.domain_min = new_instancemethod(_tinysplinepython.BSpline_domain_min, None, BSpline)
+BSpline.domain_max = new_instancemethod(_tinysplinepython.BSpline_domain_max, None, BSpline)
+BSpline.is_closed = new_instancemethod(_tinysplinepython.BSpline_is_closed, None, BSpline)
+BSpline.to_json = new_instancemethod(_tinysplinepython.BSpline_to_json, None, BSpline)
+BSpline.from_json = new_instancemethod(_tinysplinepython.BSpline_from_json, None, BSpline)
 BSpline.save = new_instancemethod(_tinysplinepython.BSpline_save, None, BSpline)
 BSpline.load = new_instancemethod(_tinysplinepython.BSpline_load, None, BSpline)
-BSpline.setControlPointAt = new_instancemethod(_tinysplinepython.BSpline_setControlPointAt, None, BSpline)
-BSpline.fillKnots = new_instancemethod(_tinysplinepython.BSpline_fillKnots, None, BSpline)
-BSpline.insertKnot = new_instancemethod(_tinysplinepython.BSpline_insertKnot, None, BSpline)
+BSpline.set_control_point_at = new_instancemethod(_tinysplinepython.BSpline_set_control_point_at, None, BSpline)
+BSpline.fill_knots = new_instancemethod(_tinysplinepython.BSpline_fill_knots, None, BSpline)
+BSpline.insert_knot = new_instancemethod(_tinysplinepython.BSpline_insert_knot, None, BSpline)
 BSpline.resize = new_instancemethod(_tinysplinepython.BSpline_resize, None, BSpline)
 BSpline.split = new_instancemethod(_tinysplinepython.BSpline_split, None, BSpline)
 BSpline.buckle = new_instancemethod(_tinysplinepython.BSpline_buckle, None, BSpline)
-BSpline.toBeziers = new_instancemethod(_tinysplinepython.BSpline_toBeziers, None, BSpline)
+BSpline.to_beziers = new_instancemethod(_tinysplinepython.BSpline_to_beziers, None, BSpline)
 BSpline.derive = new_instancemethod(_tinysplinepython.BSpline_derive, None, BSpline)
 BSpline_swigregister = _tinysplinepython.BSpline_swigregister
 BSpline_swigregister(BSpline)
@@ -394,7 +394,7 @@ class Utils(object):
     def __init__(self, *args, **kwargs):
         raise AttributeError("No constructor defined")
     __repr__ = _swig_repr
-    interpolateCubic = staticmethod(_tinysplinepython.Utils_interpolateCubic)
+    interpolate_cubic = staticmethod(_tinysplinepython.Utils_interpolate_cubic)
     fequals = staticmethod(_tinysplinepython.Utils_fequals)
     enum_str = staticmethod(_tinysplinepython.Utils_enum_str)
     str_enum = staticmethod(_tinysplinepython.Utils_str_enum)
@@ -402,9 +402,9 @@ class Utils(object):
 Utils_swigregister = _tinysplinepython.Utils_swigregister
 Utils_swigregister(Utils)
 
-def Utils_interpolateCubic(points: 'std::vector< tinyspline::real,std::allocator< tinyspline::real > > const *', dim: 'size_t') -> "tinyspline::BSpline":
-    return _tinysplinepython.Utils_interpolateCubic(points, dim)
-Utils_interpolateCubic = _tinysplinepython.Utils_interpolateCubic
+def Utils_interpolate_cubic(points: 'std::vector< tinyspline::real,std::allocator< tinyspline::real > > const *', dim: 'size_t') -> "tinyspline::BSpline":
+    return _tinysplinepython.Utils_interpolate_cubic(points, dim)
+Utils_interpolate_cubic = _tinysplinepython.Utils_interpolate_cubic
 
 def Utils_fequals(x: 'tinyspline::real', y: 'tinyspline::real') -> "bool":
     return _tinysplinepython.Utils_fequals(x, y)
