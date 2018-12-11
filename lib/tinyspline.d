@@ -114,6 +114,12 @@ int ts_bspline_set_control_points(SWIGTYPE_p_tsBSpline spline, double* ctrlp) {
   return ret;
 }
 
+int ts_bspline_set_control_point_at(SWIGTYPE_p_tsBSpline spline, size_t index, double* ctrlp) {
+  int ret = cast(int)tinyspline_im.ts_bspline_set_control_point_at(SWIGTYPE_p_tsBSpline.swigGetCPtr(spline), index, cast(void*)ctrlp);
+  if (tinyspline_im.SwigPendingException.isPending) throw tinyspline_im.SwigPendingException.retrieve();
+  return ret;
+}
+
 size_t ts_bspline_num_knots(SWIGTYPE_p_tsBSpline spline) {
   auto ret = tinyspline_im.ts_bspline_num_knots(SWIGTYPE_p_tsBSpline.swigGetCPtr(spline));
   if (tinyspline_im.SwigPendingException.isPending) throw tinyspline_im.SwigPendingException.retrieve();
@@ -615,6 +621,11 @@ class BSpline {
 
   public void setControlPoints(Vector ctrlp) {
     tinyspline_im.BSpline_setControlPoints(cast(void*)swigCPtr, Vector.swigGetCPtr(ctrlp));
+    if (tinyspline_im.SwigPendingException.isPending) throw tinyspline_im.SwigPendingException.retrieve();
+  }
+
+  public void setControlPointAt(size_t index, Vector ctrlp) {
+    tinyspline_im.BSpline_setControlPointAt(cast(void*)swigCPtr, index, Vector.swigGetCPtr(ctrlp));
     if (tinyspline_im.SwigPendingException.isPending) throw tinyspline_im.SwigPendingException.retrieve();
   }
 

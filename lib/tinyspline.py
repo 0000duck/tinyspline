@@ -155,6 +155,10 @@ def ts_bspline_set_control_points(spline: 'tsBSpline *', ctrlp: 'tsReal const *'
     return _tinysplinepython.ts_bspline_set_control_points(spline, ctrlp)
 ts_bspline_set_control_points = _tinysplinepython.ts_bspline_set_control_points
 
+def ts_bspline_set_control_point_at(spline: 'tsBSpline *', index: 'size_t', ctrlp: 'tsReal const *') -> "tsError":
+    return _tinysplinepython.ts_bspline_set_control_point_at(spline, index, ctrlp)
+ts_bspline_set_control_point_at = _tinysplinepython.ts_bspline_set_control_point_at
+
 def ts_bspline_num_knots(spline: 'tsBSpline const *') -> "size_t":
     return _tinysplinepython.ts_bspline_num_knots(spline)
 ts_bspline_num_knots = _tinysplinepython.ts_bspline_num_knots
@@ -373,6 +377,7 @@ BSpline.toJSON = new_instancemethod(_tinysplinepython.BSpline_toJSON, None, BSpl
 BSpline.fromJSON = new_instancemethod(_tinysplinepython.BSpline_fromJSON, None, BSpline)
 BSpline.save = new_instancemethod(_tinysplinepython.BSpline_save, None, BSpline)
 BSpline.load = new_instancemethod(_tinysplinepython.BSpline_load, None, BSpline)
+BSpline.setControlPointAt = new_instancemethod(_tinysplinepython.BSpline_setControlPointAt, None, BSpline)
 BSpline.fillKnots = new_instancemethod(_tinysplinepython.BSpline_fillKnots, None, BSpline)
 BSpline.insertKnot = new_instancemethod(_tinysplinepython.BSpline_insertKnot, None, BSpline)
 BSpline.resize = new_instancemethod(_tinysplinepython.BSpline_resize, None, BSpline)
