@@ -638,6 +638,20 @@ attr(`ts_deboornet_sof_result`, 'returnType') = 'integer'
 attr(`ts_deboornet_sof_result`, "inputTypes") = c('_p_tsDeBoorNet')
 class(`ts_deboornet_sof_result`) = c("SWIGFunction", class('ts_deboornet_sof_result'))
 
+# Start of ts_bspline_init
+
+`ts_bspline_init` = function(.copy = FALSE)
+{
+  ;ans = .Call('R_swig_ts_bspline_init', as.logical(.copy), PACKAGE='tinyspliner');
+  ans <- new("_p_tsBSpline", ref=ans);
+  
+  ans
+  
+}
+
+attr(`ts_bspline_init`, 'returnType') = '_p_tsBSpline'
+class(`ts_bspline_init`) = c("SWIGFunction", class('ts_bspline_init'))
+
 # Start of ts_bspline_new
 
 `ts_bspline_new` = function(num_control_points, dimension, degree, type, s_spline_, .copy = FALSE)
@@ -721,6 +735,20 @@ class(`ts_bspline_move`) = c("SWIGFunction", class('ts_bspline_move'))
 attr(`ts_bspline_free`, 'returnType') = 'void'
 attr(`ts_bspline_free`, "inputTypes") = c('_p_tsBSpline')
 class(`ts_bspline_free`) = c("SWIGFunction", class('ts_bspline_free'))
+
+# Start of ts_deboornet_init
+
+`ts_deboornet_init` = function(.copy = FALSE)
+{
+  ;ans = .Call('R_swig_ts_deboornet_init', as.logical(.copy), PACKAGE='tinyspliner');
+  ans <- new("_p_tsDeBoorNet", ref=ans);
+  
+  ans
+  
+}
+
+attr(`ts_deboornet_init`, 'returnType') = '_p_tsDeBoorNet'
+class(`ts_deboornet_init`) = c("SWIGFunction", class('ts_deboornet_init'))
 
 # Start of ts_deboornet_copy
 
