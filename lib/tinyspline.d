@@ -222,6 +222,12 @@ int ts_deboornet_result(SWIGTYPE_p_tsDeBoorNet net, double** result) {
   return ret;
 }
 
+SWIGTYPE_p_tsBSpline ts_bspline_init() {
+  SWIGTYPE_p_tsBSpline ret = new SWIGTYPE_p_tsBSpline(tinyspline_im.ts_bspline_init(), true);
+  if (tinyspline_im.SwigPendingException.isPending) throw tinyspline_im.SwigPendingException.retrieve();
+  return ret;
+}
+
 int ts_bspline_new(size_t num_control_points, size_t dimension, size_t degree, BSplineType type, SWIGTYPE_p_tsBSpline _spline_) {
   int ret = cast(int)tinyspline_im.ts_bspline_new(num_control_points, dimension, degree, cast(int)type, SWIGTYPE_p_tsBSpline.swigGetCPtr(_spline_));
   if (tinyspline_im.SwigPendingException.isPending) throw tinyspline_im.SwigPendingException.retrieve();
@@ -242,6 +248,12 @@ void ts_bspline_move(SWIGTYPE_p_tsBSpline from, SWIGTYPE_p_tsBSpline _to_) {
 void ts_bspline_free(SWIGTYPE_p_tsBSpline _spline_) {
   tinyspline_im.ts_bspline_free(SWIGTYPE_p_tsBSpline.swigGetCPtr(_spline_));
   if (tinyspline_im.SwigPendingException.isPending) throw tinyspline_im.SwigPendingException.retrieve();
+}
+
+SWIGTYPE_p_tsDeBoorNet ts_deboornet_init() {
+  SWIGTYPE_p_tsDeBoorNet ret = new SWIGTYPE_p_tsDeBoorNet(tinyspline_im.ts_deboornet_init(), true);
+  if (tinyspline_im.SwigPendingException.isPending) throw tinyspline_im.SwigPendingException.retrieve();
+  return ret;
 }
 
 int ts_deboornet_copy(SWIGTYPE_p_tsDeBoorNet original, SWIGTYPE_p_tsDeBoorNet _copy_) {

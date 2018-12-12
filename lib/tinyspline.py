@@ -227,6 +227,10 @@ def ts_deboornet_result(net: 'tsDeBoorNet const *', result: 'tsReal **') -> "tsE
     return _tinysplinepython.ts_deboornet_result(net, result)
 ts_deboornet_result = _tinysplinepython.ts_deboornet_result
 
+def ts_bspline_init() -> "tsBSpline":
+    return _tinysplinepython.ts_bspline_init()
+ts_bspline_init = _tinysplinepython.ts_bspline_init
+
 def ts_bspline_new(num_control_points: 'size_t', dimension: 'size_t', degree: 'size_t', type: 'tsBSplineType', _spline_: 'tsBSpline *') -> "tsError":
     return _tinysplinepython.ts_bspline_new(num_control_points, dimension, degree, type, _spline_)
 ts_bspline_new = _tinysplinepython.ts_bspline_new
@@ -242,6 +246,10 @@ ts_bspline_move = _tinysplinepython.ts_bspline_move
 def ts_bspline_free(_spline_: 'tsBSpline *') -> "void":
     return _tinysplinepython.ts_bspline_free(_spline_)
 ts_bspline_free = _tinysplinepython.ts_bspline_free
+
+def ts_deboornet_init() -> "tsDeBoorNet":
+    return _tinysplinepython.ts_deboornet_init()
+ts_deboornet_init = _tinysplinepython.ts_deboornet_init
 
 def ts_deboornet_copy(original: 'tsDeBoorNet const *', _copy_: 'tsDeBoorNet *') -> "tsError":
     return _tinysplinepython.ts_deboornet_copy(original, _copy_)
