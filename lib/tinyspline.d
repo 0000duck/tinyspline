@@ -23,14 +23,26 @@ static import std.range;
 static import std.traits;
 
 
-double FLT_MAX_ABS_ERROR() @property {
-  auto ret = tinyspline_im.FLT_MAX_ABS_ERROR_get();
+int TS_MAX_NUM_KNOTS() @property {
+  auto ret = tinyspline_im.TS_MAX_NUM_KNOTS_get();
   if (tinyspline_im.SwigPendingException.isPending) throw tinyspline_im.SwigPendingException.retrieve();
   return ret;
 }
 
-double FLT_MAX_REL_ERROR() @property {
-  auto ret = tinyspline_im.FLT_MAX_REL_ERROR_get();
+double TS_MIN_KNOT_VALUE() @property {
+  auto ret = tinyspline_im.TS_MIN_KNOT_VALUE_get();
+  if (tinyspline_im.SwigPendingException.isPending) throw tinyspline_im.SwigPendingException.retrieve();
+  return ret;
+}
+
+double TS_MAX_KNOT_VALUE() @property {
+  auto ret = tinyspline_im.TS_MAX_KNOT_VALUE_get();
+  if (tinyspline_im.SwigPendingException.isPending) throw tinyspline_im.SwigPendingException.retrieve();
+  return ret;
+}
+
+double TS_EPSILON() @property {
+  auto ret = tinyspline_im.TS_EPSILON_get();
   if (tinyspline_im.SwigPendingException.isPending) throw tinyspline_im.SwigPendingException.retrieve();
   return ret;
 }
@@ -304,12 +316,6 @@ int ts_bspline_is_closed(SWIGTYPE_p_tsBSpline spline, double epsilon, int* close
 
 int ts_bspline_derive(SWIGTYPE_p_tsBSpline spline, size_t n, SWIGTYPE_p_tsBSpline _derivative_) {
   int ret = cast(int)tinyspline_im.ts_bspline_derive(SWIGTYPE_p_tsBSpline.swigGetCPtr(spline), n, SWIGTYPE_p_tsBSpline.swigGetCPtr(_derivative_));
-  if (tinyspline_im.SwigPendingException.isPending) throw tinyspline_im.SwigPendingException.retrieve();
-  return ret;
-}
-
-int ts_bspline_fill_knots(SWIGTYPE_p_tsBSpline spline, BSplineType type, double min, double max, SWIGTYPE_p_tsBSpline _result_) {
-  int ret = cast(int)tinyspline_im.ts_bspline_fill_knots(SWIGTYPE_p_tsBSpline.swigGetCPtr(spline), cast(int)type, min, max, SWIGTYPE_p_tsBSpline.swigGetCPtr(_result_));
   if (tinyspline_im.SwigPendingException.isPending) throw tinyspline_im.SwigPendingException.retrieve();
   return ret;
 }
@@ -644,12 +650,6 @@ class BSpline {
   public void setKnots(Vector knots) {
     tinyspline_im.BSpline_setKnots(cast(void*)swigCPtr, Vector.swigGetCPtr(knots));
     if (tinyspline_im.SwigPendingException.isPending) throw tinyspline_im.SwigPendingException.retrieve();
-  }
-
-  public BSpline fillKnots(BSplineType type, double min, double max) const {
-    BSpline ret = new BSpline(tinyspline_im.BSpline_fillKnots(cast(void*)swigCPtr, cast(int)type, min, max), true);
-    if (tinyspline_im.SwigPendingException.isPending) throw tinyspline_im.SwigPendingException.retrieve();
-    return ret;
   }
 
   public BSpline insertKnot(double u, size_t n) const {

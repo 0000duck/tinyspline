@@ -100,8 +100,10 @@ def _swig_setattr_nondynamic_method(set):
     return set_attr
 
 
-FLT_MAX_ABS_ERROR = _tinysplinepython.FLT_MAX_ABS_ERROR
-FLT_MAX_REL_ERROR = _tinysplinepython.FLT_MAX_REL_ERROR
+TS_MAX_NUM_KNOTS = _tinysplinepython.TS_MAX_NUM_KNOTS
+TS_MIN_KNOT_VALUE = _tinysplinepython.TS_MIN_KNOT_VALUE
+TS_MAX_KNOT_VALUE = _tinysplinepython.TS_MAX_KNOT_VALUE
+TS_EPSILON = _tinysplinepython.TS_EPSILON
 NONE = _tinysplinepython.NONE
 OPENED = _tinysplinepython.OPENED
 CLAMPED = _tinysplinepython.CLAMPED
@@ -287,10 +289,6 @@ def ts_bspline_derive(spline: 'tsBSpline const *', n: 'size_t', _derivative_: 't
     return _tinysplinepython.ts_bspline_derive(spline, n, _derivative_)
 ts_bspline_derive = _tinysplinepython.ts_bspline_derive
 
-def ts_bspline_fill_knots(spline: 'tsBSpline const *', type: 'tsBSplineType', min: 'tsReal', max: 'tsReal', _result_: 'tsBSpline *') -> "tsError":
-    return _tinysplinepython.ts_bspline_fill_knots(spline, type, min, max, _result_)
-ts_bspline_fill_knots = _tinysplinepython.ts_bspline_fill_knots
-
 def ts_bspline_insert_knot(spline: 'tsBSpline const *', u: 'tsReal', n: 'size_t', _result_: 'tsBSpline *', _k_: 'size_t *') -> "tsError":
     return _tinysplinepython.ts_bspline_insert_knot(spline, u, n, _result_, _k_)
 ts_bspline_insert_knot = _tinysplinepython.ts_bspline_insert_knot
@@ -386,7 +384,6 @@ BSpline.from_json = new_instancemethod(_tinysplinepython.BSpline_from_json, None
 BSpline.save = new_instancemethod(_tinysplinepython.BSpline_save, None, BSpline)
 BSpline.load = new_instancemethod(_tinysplinepython.BSpline_load, None, BSpline)
 BSpline.set_control_point_at = new_instancemethod(_tinysplinepython.BSpline_set_control_point_at, None, BSpline)
-BSpline.fill_knots = new_instancemethod(_tinysplinepython.BSpline_fill_knots, None, BSpline)
 BSpline.insert_knot = new_instancemethod(_tinysplinepython.BSpline_insert_knot, None, BSpline)
 BSpline.resize = new_instancemethod(_tinysplinepython.BSpline_resize, None, BSpline)
 BSpline.split = new_instancemethod(_tinysplinepython.BSpline_split, None, BSpline)
