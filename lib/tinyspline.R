@@ -907,31 +907,6 @@ attr(`ts_bspline_derive`, 'returnType') = 'character'
 attr(`ts_bspline_derive`, "inputTypes") = c('_p_tsBSpline', 'integer', '_p_tsBSpline')
 class(`ts_bspline_derive`) = c("SWIGFunction", class('ts_bspline_derive'))
 
-# Start of ts_bspline_fill_knots
-
-`ts_bspline_fill_knots` = function(spline, type, min, max, s_result_, .copy = FALSE)
-{
-  if (inherits(spline, "ExternalReference")) spline = slot(spline,"ref") 
-  type = enumToInteger(type, "_tsBSplineType"); 
-  
-  if(length(type) > 1) {
-    warning("using only the first element of type");
-  };
-  
-  
-  
-  if (inherits(s_result_, "ExternalReference")) s_result_ = slot(s_result_,"ref") 
-  ;ans = .Call('R_swig_ts_bspline_fill_knots', spline, type, min, max, s_result_, as.logical(.copy), PACKAGE='tinyspliner');
-  ans = enumFromInteger(ans, "_tsError");
-  
-  ans
-  
-}
-
-attr(`ts_bspline_fill_knots`, 'returnType') = 'character'
-attr(`ts_bspline_fill_knots`, "inputTypes") = c('_p_tsBSpline', 'character', 'numeric', 'numeric', '_p_tsBSpline')
-class(`ts_bspline_fill_knots`) = c("SWIGFunction", class('ts_bspline_fill_knots'))
-
 # Start of ts_bspline_insert_knot
 
 `ts_bspline_insert_knot` = function(spline, u, n, s_result_, s_k_, .copy = FALSE)
@@ -1734,30 +1709,6 @@ attr(`BSpline_setControlPointAt`, 'returnType') = 'void'
 attr(`BSpline_setControlPointAt`, "inputTypes") = c('_p_tinyspline__BSpline', 'integer', '_p_std__vectorT_double_std__allocatorT_double_t_t')
 class(`BSpline_setControlPointAt`) = c("SWIGFunction", class('BSpline_setControlPointAt'))
 
-# Start of BSpline_fillKnots
-
-`BSpline_fillKnots` = function(self, type, min, max, .copy = FALSE)
-{
-  if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
-  type = enumToInteger(type, "_tsBSplineType"); 
-  
-  if(length(type) > 1) {
-    warning("using only the first element of type");
-  };
-  
-  
-  
-  ;ans = .Call('R_swig_BSpline_fillKnots', self, type, min, max, as.logical(.copy), PACKAGE='tinyspliner');
-  ans <- new("_p_tinyspline__BSpline", ref=ans);
-  
-  ans
-  
-}
-
-attr(`BSpline_fillKnots`, 'returnType') = '_p_tinyspline__BSpline'
-attr(`BSpline_fillKnots`, "inputTypes") = c('_p_tinyspline__BSpline', 'character', 'numeric', 'numeric')
-class(`BSpline_fillKnots`) = c("SWIGFunction", class('BSpline_fillKnots'))
-
 # Start of BSpline_insertKnot
 
 `BSpline_insertKnot` = function(self, u, n, .copy = FALSE)
@@ -2014,7 +1965,7 @@ class(`BSpline_knots_get`) = c("SWIGFunction", class('BSpline_knots_get'))
 setMethod('$', '_p_tinyspline__BSpline', function(x, name)
 
 {
-  accessorFuns = list('Functor' = BSpline_Functor, 'controlPointAt' = BSpline_controlPointAt, 'eval' = BSpline_eval, 'domainMin' = BSpline_domainMin, 'domainMax' = BSpline_domainMax, 'isClosed' = BSpline_isClosed, 'toJSON' = BSpline_toJSON, 'fromJSON' = BSpline_fromJSON, 'save' = BSpline_save, 'load' = BSpline_load, 'setControlPointAt' = BSpline_setControlPointAt, 'fillKnots' = BSpline_fillKnots, 'insertKnot' = BSpline_insertKnot, 'resize' = BSpline_resize, 'split' = BSpline_split, 'buckle' = BSpline_buckle, 'toBeziers' = BSpline_toBeziers, 'derive' = BSpline_derive, 'degree' = BSpline_degree_get, 'order' = BSpline_order_get, 'dimension' = BSpline_dimension_get, 'controlPoints' = BSpline_controlPoints_get, 'knots' = BSpline_knots_get);
+  accessorFuns = list('Functor' = BSpline_Functor, 'controlPointAt' = BSpline_controlPointAt, 'eval' = BSpline_eval, 'domainMin' = BSpline_domainMin, 'domainMax' = BSpline_domainMax, 'isClosed' = BSpline_isClosed, 'toJSON' = BSpline_toJSON, 'fromJSON' = BSpline_fromJSON, 'save' = BSpline_save, 'load' = BSpline_load, 'setControlPointAt' = BSpline_setControlPointAt, 'insertKnot' = BSpline_insertKnot, 'resize' = BSpline_resize, 'split' = BSpline_split, 'buckle' = BSpline_buckle, 'toBeziers' = BSpline_toBeziers, 'derive' = BSpline_derive, 'degree' = BSpline_degree_get, 'order' = BSpline_order_get, 'dimension' = BSpline_dimension_get, 'controlPoints' = BSpline_controlPoints_get, 'knots' = BSpline_knots_get);
   vaccessors = c('degree', 'order', 'dimension', 'controlPoints', 'knots');
   ;        idx = pmatch(name, names(accessorFuns));
   if(is.na(idx)) 

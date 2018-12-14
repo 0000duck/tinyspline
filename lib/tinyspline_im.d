@@ -294,8 +294,10 @@ static this() {
   mixin(bindCode("swigRegisterStringCallbacktinyspline", "SWIGRegisterStringCallback_tinyspline"));
   //#endif // SWIG_D_NO_STRING_HELPER
   
-  mixin(bindCode("FLT_MAX_ABS_ERROR_get", "D_FLT_MAX_ABS_ERROR_get"));
-  mixin(bindCode("FLT_MAX_REL_ERROR_get", "D_FLT_MAX_REL_ERROR_get"));
+  mixin(bindCode("TS_MAX_NUM_KNOTS_get", "D_TS_MAX_NUM_KNOTS_get"));
+  mixin(bindCode("TS_MIN_KNOT_VALUE_get", "D_TS_MIN_KNOT_VALUE_get"));
+  mixin(bindCode("TS_MAX_KNOT_VALUE_get", "D_TS_MAX_KNOT_VALUE_get"));
+  mixin(bindCode("TS_EPSILON_get", "D_TS_EPSILON_get"));
   mixin(bindCode("ts_bspline_degree", "D_ts_bspline_degree"));
   mixin(bindCode("ts_bspline_set_degree", "D_ts_bspline_set_degree"));
   mixin(bindCode("ts_bspline_order", "D_ts_bspline_order"));
@@ -341,7 +343,6 @@ static this() {
   mixin(bindCode("ts_bspline_domain_max", "D_ts_bspline_domain_max"));
   mixin(bindCode("ts_bspline_is_closed", "D_ts_bspline_is_closed"));
   mixin(bindCode("ts_bspline_derive", "D_ts_bspline_derive"));
-  mixin(bindCode("ts_bspline_fill_knots", "D_ts_bspline_fill_knots"));
   mixin(bindCode("ts_bspline_insert_knot", "D_ts_bspline_insert_knot"));
   mixin(bindCode("ts_bspline_resize", "D_ts_bspline_resize"));
   mixin(bindCode("ts_bspline_split", "D_ts_bspline_split"));
@@ -391,7 +392,6 @@ static this() {
   mixin(bindCode("BSpline_setControlPoints", "D_BSpline_setControlPoints"));
   mixin(bindCode("BSpline_setControlPointAt", "D_BSpline_setControlPointAt"));
   mixin(bindCode("BSpline_setKnots", "D_BSpline_setKnots"));
-  mixin(bindCode("BSpline_fillKnots", "D_BSpline_fillKnots"));
   mixin(bindCode("BSpline_insertKnot", "D_BSpline_insertKnot"));
   mixin(bindCode("BSpline_resize", "D_BSpline_resize"));
   mixin(bindCode("BSpline_split", "D_BSpline_split"));
@@ -573,8 +573,10 @@ template SwigExternC(T) if (is(typeof(*(T.init)) P == function)) {
   }
 }
 
-SwigExternC!(double function()) FLT_MAX_ABS_ERROR_get;
-SwigExternC!(double function()) FLT_MAX_REL_ERROR_get;
+SwigExternC!(int function()) TS_MAX_NUM_KNOTS_get;
+SwigExternC!(double function()) TS_MIN_KNOT_VALUE_get;
+SwigExternC!(double function()) TS_MAX_KNOT_VALUE_get;
+SwigExternC!(double function()) TS_EPSILON_get;
 SwigExternC!(size_t function(void* jarg1)) ts_bspline_degree;
 SwigExternC!(int function(void* jarg1, size_t jarg2)) ts_bspline_set_degree;
 SwigExternC!(size_t function(void* jarg1)) ts_bspline_order;
@@ -620,7 +622,6 @@ SwigExternC!(double function(void* jarg1)) ts_bspline_domain_min;
 SwigExternC!(double function(void* jarg1)) ts_bspline_domain_max;
 SwigExternC!(int function(void* jarg1, double jarg2, void* jarg3)) ts_bspline_is_closed;
 SwigExternC!(int function(void* jarg1, size_t jarg2, void* jarg3)) ts_bspline_derive;
-SwigExternC!(int function(void* jarg1, int jarg2, double jarg3, double jarg4, void* jarg5)) ts_bspline_fill_knots;
 SwigExternC!(int function(void* jarg1, double jarg2, size_t jarg3, void* jarg4, void* jarg5)) ts_bspline_insert_knot;
 SwigExternC!(int function(void* jarg1, int jarg2, int jarg3, void* jarg4)) ts_bspline_resize;
 SwigExternC!(int function(void* jarg1, double jarg2, void* jarg3, void* jarg4)) ts_bspline_split;
@@ -670,7 +671,6 @@ SwigExternC!(void function(void* jarg1, const(char)* jarg2)) BSpline_load;
 SwigExternC!(void function(void* jarg1, void* jarg2)) BSpline_setControlPoints;
 SwigExternC!(void function(void* jarg1, size_t jarg2, void* jarg3)) BSpline_setControlPointAt;
 SwigExternC!(void function(void* jarg1, void* jarg2)) BSpline_setKnots;
-SwigExternC!(void* function(void* jarg1, int jarg2, double jarg3, double jarg4)) BSpline_fillKnots;
 SwigExternC!(void* function(void* jarg1, double jarg2, size_t jarg3)) BSpline_insertKnot;
 SwigExternC!(void* function(void* jarg1, int jarg2, int jarg3)) BSpline_resize;
 SwigExternC!(void* function(void* jarg1, double jarg2)) BSpline_split;
