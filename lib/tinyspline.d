@@ -48,10 +48,9 @@ double TS_EPSILON() @property {
 }
 
 enum BSplineType {
-  NONE = 0,
-  OPENED = 1,
-  CLAMPED = 2,
-  BEZIERS = 3
+  OPENED = 0,
+  CLAMPED = 1,
+  BEZIERS = 2
 }
 
 size_t ts_bspline_degree(SWIGTYPE_p_tsBSpline spline) {

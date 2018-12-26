@@ -104,7 +104,6 @@ TS_MAX_NUM_KNOTS = _tinysplinepython.TS_MAX_NUM_KNOTS
 TS_MIN_KNOT_VALUE = _tinysplinepython.TS_MIN_KNOT_VALUE
 TS_MAX_KNOT_VALUE = _tinysplinepython.TS_MAX_KNOT_VALUE
 TS_EPSILON = _tinysplinepython.TS_EPSILON
-NONE = _tinysplinepython.NONE
 OPENED = _tinysplinepython.OPENED
 CLAMPED = _tinysplinepython.CLAMPED
 BEZIERS = _tinysplinepython.BEZIERS
