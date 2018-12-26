@@ -189,10 +189,9 @@ function(x) {print(as(x, "character"))})))
 
 defineEnumeration('_tsBSplineType',
                     .values = c(
-                        'TS_NONE' = 0, 
-                        'TS_OPENED' = 1, 
-                        'TS_CLAMPED' = 2, 
-                        'TS_BEZIERS' = 3
+                        'TS_OPENED' = 0, 
+                        'TS_CLAMPED' = 1, 
+                        'TS_BEZIERS' = 2
 ))
 # Start of ts_bspline_degree
 
